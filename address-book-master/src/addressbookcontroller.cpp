@@ -52,4 +52,15 @@ ErrorInfo AddressBookController::editContact(const Contact::ContactId id, const 
     return dataStore.updateContact(id, c);
 
 }
+ErrorInfo AddressBookController::searchContact(const Contact::ContactId id, const Contact &c)
+{
+    if(!c.isValidToAdd())
+    {
+        return ErrorInfo(ERR_CONTACT_NOT_VALID,
+                "Invalid Contact. Make sure all required fields are filled.");
+    }
+
+    return dataStore.searchContact(id);
+
+}
 

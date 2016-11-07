@@ -10,13 +10,15 @@ QtContactForm::QtContactForm(QWidget *parent) :
         lastNameField(new QLineEdit()),
         addressField(new QLineEdit()),
         phoneNumberField(new QLineEdit()),
-        emailField(new QLineEdit())
+        emailField(new QLineEdit()),
+        bloodgroupField(new QLineEdit())
 {
-    addRow("First Name", firstNameField);
-    addRow("Last Name", lastNameField);
-    addRow("Address", addressField);
-    addRow("Phone Number", phoneNumberField);
-    addRow("Email", emailField);
+    addRow("<FONT STYLE='background-color:violet;color:black;'>First Name</font>", firstNameField);
+    addRow("<FONT STYLE='background-color:violet;color:black;'>Last Name</font>", lastNameField);
+    addRow("<FONT STYLE='background-color:violet;color:black;'>Address</font>", addressField);
+    addRow("<FONT STYLE='background-color:violet;color:black;'>Phone Number</font>", phoneNumberField);
+    addRow("<FONT STYLE='background-color:violet;color:black;'>Email ID</font>", emailField);
+    addRow("<FONT STYLE='background-color:violet;color:black;'>Blod Group</font>", bloodgroupField);
 }
 
 void QtContactForm::clear()
@@ -26,4 +28,5 @@ void QtContactForm::clear()
     addressField->setText("");
     phoneNumberField->setText("");
     emailField->setText("");
+    bloodgroupField->setText("");
 }

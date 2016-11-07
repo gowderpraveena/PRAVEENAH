@@ -3394,7 +3394,7 @@ SQLITE_API int sqlite3_bind_null(sqlite3_stmt*, int);
 SQLITE_API int sqlite3_bind_text(sqlite3_stmt*, int, const char*, int n, void(*)(void*));
 SQLITE_API int sqlite3_bind_text16(sqlite3_stmt*, int, const void*, int, void(*)(void*));
 SQLITE_API int sqlite3_bind_value(sqlite3_stmt*, int, const sqlite3_value*);
-SQLITE_API int sqlite3_bind_zeroblob(sqlite3_stmt*, int, int n);
+SQLITE_API int sqlite3_bind_zeroblob(sqlite3_stmt*, int, long n);
 
 /*
 ** CAPI3REF: Number Of SQL Parameters

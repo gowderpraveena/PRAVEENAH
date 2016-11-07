@@ -27,8 +27,10 @@ class Contact
         std::string phoneNumber;
         std::string address;
         std::string email;
+        std::string bloodgroup;
 
-        Contact():id(0), firstName(), lastName(), phoneNumber(), email(){ }
+
+        Contact():id(0), firstName(), lastName(), phoneNumber(), address(), email(),bloodgroup() { }
         bool isValidToAdd() const;
         bool isEmpty() const;
 
