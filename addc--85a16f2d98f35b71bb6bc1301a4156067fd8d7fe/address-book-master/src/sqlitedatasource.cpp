@@ -180,7 +180,7 @@ ErrorInfo SQLiteDataSource::addContact(const Contact& c)
 {
     //create sql prepared statement
     std::string sqlStr = "INSERT INTO Contacts VALUES("
-                        "NULL,?,?,?,?,?);";
+                        "NULL,?,?,?,?,?,?);";
     
     SQLiteStatementHandle insertStatement(sqlStr, database.get()); 
 
@@ -212,8 +212,8 @@ ErrorInfo SQLiteDataSource::updateContact(Contact::ContactId id, const Contact& 
     //create sql prepared statement
     std::string sqlStr = "UPDATE Contacts SET "
                          "firstname=?, lastname=?,"
-                         "phonenum=?, address=?"
-                         "email=? WHERE id=?;"; 
+                         "phonenum=?, address=?,city=?"
+                         "email=? WHERE id=?";
     
     SQLiteStatementHandle updateStatement(sqlStr, database.get()); 
 
