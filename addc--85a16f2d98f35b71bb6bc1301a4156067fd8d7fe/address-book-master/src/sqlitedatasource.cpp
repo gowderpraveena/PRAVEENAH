@@ -212,7 +212,7 @@ ErrorInfo SQLiteDataSource::updateContact(Contact::ContactId id, const Contact& 
     //create sql prepared statement
     std::string sqlStr = "UPDATE Contacts SET "
                          "firstname=?, lastname=?,"
-                         "phonenum=?, address=?,city=?"
+                         "phonenum=?, address=?,city=?,"
                          "email=? WHERE id=?";
     
     SQLiteStatementHandle updateStatement(sqlStr, database.get()); 
@@ -281,4 +281,10 @@ ErrorInfo SQLiteDataSource::deleteAllContacts()
 
     return ErrorInfo(ERR_OK, "OK");
 }
+//ErrorInfo SQLiteDataSource::searchContact(const Contact::ContactId id, const Contact &c)
+
+//{
+
+//}
+
 

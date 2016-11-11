@@ -34,9 +34,10 @@ class DummyDataSource : public AddressBookModel
         virtual ErrorInfo addContact(const Contact& c);
         virtual ErrorInfo updateContact(Contact::ContactId id, const Contact& c);
         virtual ErrorInfo deleteContact(Contact::ContactId id);
+        //virtual ErrorInfo searchContact(const Contact::ContactId id, const Contact & c);
         virtual ErrorInfo deleteAllContacts();
 
-        DummyDataSource();  
+        DummyDataSource();
         ~DummyDataSource() { };
 
     private:

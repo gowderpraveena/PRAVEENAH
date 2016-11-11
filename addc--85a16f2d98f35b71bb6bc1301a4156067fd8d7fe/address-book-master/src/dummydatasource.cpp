@@ -133,6 +133,7 @@ ErrorInfo DummyDataSource::addContact(const Contact& c)
     nextId++;
 
     //Data has changed
+
     notifyViews();
 
     return ErrorInfo(ERR_OK, "OK");

@@ -17,6 +17,7 @@ QtAddressBookGUI::QtAddressBookGUI(AddressBookController &controller, AddressBoo
 {
     createWidgets();
     setMinimumSize(640,480);
+
 }
 
 QtAddressBookGUI::~QtAddressBookGUI()
@@ -53,13 +54,15 @@ void QtAddressBookGUI::createWidgets()
     deleteContactButton->setObjectName(QString::fromUtf8("newContactButton"));
     deleteContactButton->setIcon(QIcon(QPixmap("C:/Users/Administrator/Downloads/address-book-master/Penguins.jpg")));
 
+
+    searchContactButton = new QPushButton("search");
+    searchContactField = new QLineEdit("Enter first name to search");
+
     newContactButton->setStyleSheet(QString::fromUtf8("background-color: rgb(20, 40, 210);"));
     //newContactButton->setStyleSheet(QString::fromUtf8("color:yellow;"));
     editContactButton->setStyleSheet(QString::fromUtf8("background-color: rgb(180, 189, 21);"));
     deleteContactButton->setStyleSheet(QString::fromUtf8("background-color: rgb(101, 56, 55);"));
-
-
-
+    //searchContactButton->setStyleSheet(QString::fromUtf8("background-color: rgb(120, 60, 30);"));
 
 
 
@@ -67,6 +70,9 @@ void QtAddressBookGUI::createWidgets()
     buttonLayout->addWidget(newContactButton);
     buttonLayout->addWidget(editContactButton);
     buttonLayout->addWidget(deleteContactButton);
+    buttonLayout->addWidget(searchContactButton);
+    buttonLayout->addWidget(searchContactField);
+
 
 
 
@@ -79,8 +85,8 @@ void QtAddressBookGUI::createWidgets()
     mainLayout->addLayout(rightSideLayout);
     
     //Connect contact list to the detail form
-    connect(list, 
-            SIGNAL(contactSelected(Contact::ContactId)),
+    connect(list,
+            SIGNAL(ContactSelected(Contact::ContactId)),
             detailView,
             SLOT(displayContact(Contact::ContactId)));
 
@@ -92,6 +98,10 @@ void QtAddressBookGUI::createWidgets()
 
     connect(editContactButton, SIGNAL(clicked()),
             this, SLOT(editContact()));
+
+    connect(searchContactButton, SIGNAL(clicked()),
+            this, SLOT(searchContact()));
+
 
     //tell the sub-widgets to refresh their data from
     //
@@ -226,4 +236,12 @@ void QtAddressBookGUI::deleteContact()
         return;
     }
 }
+void QtAddressBookGUI::searchContact()
+{
+    std::string nameTosearch=searchContactField->text().toStdString();
+    Contact::ContactId idofsearchedItem=list->searchList(nameTosearch);
+    detailView->clear();
+    detailView->displayContact(idofsearchedItem);
+
+    }
 

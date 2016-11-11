@@ -20,6 +20,7 @@ QtEditContactDialog::QtEditContactDialog(Contact &c,
     QHBoxLayout *buttonContainer = new QHBoxLayout();
     QPushButton *okButton = new QPushButton("OK");
     QPushButton *cancelButton = new QPushButton("Cancel");
+
     buttonContainer->addWidget(okButton);
     buttonContainer->addWidget(cancelButton);
     mainContainer->addLayout(buttonContainer);

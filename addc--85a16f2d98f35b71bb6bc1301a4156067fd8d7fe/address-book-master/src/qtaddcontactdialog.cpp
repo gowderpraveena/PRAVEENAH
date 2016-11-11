@@ -19,6 +19,10 @@ QtAddContactDialog::QtAddContactDialog(Contact &c, QWidget *parent, Qt::WindowFl
     QPushButton *addButton = new QPushButton("Add");
 
     QPushButton *cancelButton = new QPushButton("Cancel");
+   // QLabel *label = new QLabel(this);
+//    label->setFrameStyle(QFrame::Panel | QFrame::Sunken);
+//    label->setText("first line\nsecond line");
+  //  label->setAlignment(Qt::AlignBottom | Qt::AlignRight);
 
     
     buttonContainer->addWidget(addButton);

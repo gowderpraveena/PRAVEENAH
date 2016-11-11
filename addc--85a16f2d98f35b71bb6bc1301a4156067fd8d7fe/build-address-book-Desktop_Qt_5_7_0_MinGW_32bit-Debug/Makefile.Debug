@@ -2093,7 +2093,10 @@ src/tmp/qtcontactlist.o: ../address-book-master/src/qtcontactlist.cpp C:/Qt/Qt5.
 		C:/Qt/Qt5.7.0/5.7/mingw53_32/include/QtWidgets/qstyle.h \
 		C:/Qt/Qt5.7.0/5.7/mingw53_32/include/QtWidgets/qtabbar.h \
 		C:/Qt/Qt5.7.0/5.7/mingw53_32/include/QtWidgets/qtabwidget.h \
-		C:/Qt/Qt5.7.0/5.7/mingw53_32/include/QtWidgets/qrubberband.h
+		C:/Qt/Qt5.7.0/5.7/mingw53_32/include/QtWidgets/qrubberband.h \
+		C:/Qt/Qt5.7.0/5.7/mingw53_32/include/QtWidgets/QMessageBox \
+		C:/Qt/Qt5.7.0/5.7/mingw53_32/include/QtWidgets/qmessagebox.h \
+		C:/Qt/Qt5.7.0/5.7/mingw53_32/include/QtWidgets/qdialog.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o src\tmp\qtcontactlist.o ..\address-book-master\src\qtcontactlist.cpp
 
 src/tmp/qteditcontactdialog.o: ../address-book-master/src/qteditcontactdialog.cpp ../address-book-master/src/contact.h \
